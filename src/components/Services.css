@@ -1,0 +1,106 @@
+/* ========================================
+   Services Section
+   ======================================== */
+.services {
+  padding: var(--section-padding);
+  background: var(--color-cream);
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.services__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-green), var(--color-green-light));
+  transform: scaleX(0);
+  transition: transform var(--transition-medium);
+  transform-origin: left;
+}
+
+.services__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.services__card:hover::before {
+  transform: scaleX(1);
+}
+
+.services__icon {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-md);
+  background: rgba(74, 93, 35, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.services__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--color-dark);
+}
+
+.services__desc {
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.services__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-green);
+  cursor: pointer;
+  transition: gap var(--transition-fast);
+}
+
+.services__link:hover {
+  gap: 0.6rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,116 @@
+/* ========================================
+   Promise Section
+   ======================================== */
+.promise {
+  position: relative;
+  padding: 5rem 2rem;
+  background: var(--color-olive-dark);
+  overflow: hidden;
+}
+
+.promise__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(61, 74, 42, 0.97) 0%,
+    rgba(46, 56, 32, 0.93) 50%,
+    rgba(74, 93, 35, 0.95) 100%
+  );
+}
+
+.promise__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.promise__script {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: var(--color-terracotta);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.promise__title {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.promise__subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 580px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+.promise__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.promise__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1.5rem;
+  transition: all var(--transition-medium);
+}
+
+.promise__item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.promise__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.promise__item-icon svg {
+  stroke: var(--color-white);
+}
+
+.promise__item-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promise__title {
+    font-size: 2rem;
+  }
+
+  .promise__item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .promise__item-text {
+    white-space: normal;
+  }
+}

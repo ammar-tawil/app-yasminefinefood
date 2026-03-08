@@ -1,0 +1,71 @@
+import { useState } from 'react';
+import { supabase } from '../lib/supabase';
+import './Newsletter.css';
+
+const Newsletter = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('submitting');
+
+    // Attempt insert into Supabase
+    const { error } = await supabase
+      .from('subscribers')
+      .insert([{ email }]);
+
+    if (error) {
+      if (error.code === '23505') {
+        alert('This email is already subscribed!');
+      } else {
+        alert('There was an error subscribing. Please try again later.');
+      }
+      setStatus('error');
+    } else {
+      setStatus('success');
+      setEmail('');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
+  };
+
+  return (
+    <section className="newsletter">
+      <div className="newsletter__bg"></div>
+      <div className="newsletter__overlay"></div>
+      <div className="container newsletter__content">
+        <span className="newsletter__script">Stay Updated</span>
+        <h2 className="newsletter__title">Subscribe to Our Newsletter</h2>
+        <p className="newsletter__desc">
+          Get the latest updates on new products, special offers, and industry news.
+        </p>
+        <form className="newsletter__form" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            className="newsletter__input"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={status === 'submitting'}
+            required
+          />
+          <button type="submit" className="btn btn--primary newsletter__btn" disabled={status === 'submitting' || status === 'success'}>
+            {status === 'submitting' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
+            {status !== 'submitting' && status !== 'success' && (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            )}
+          </button>
+        </form>
+        {status === 'success' && (
+          <p style={{ color: 'var(--color-white)', marginTop: '1rem', fontWeight: '500' }}>
+            Thanks for subscribing!
+          </p>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Newsletter;

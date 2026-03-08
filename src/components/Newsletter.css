@@ -1,0 +1,102 @@
+/* ========================================
+   Newsletter
+   ======================================== */
+.newsletter {
+  position: relative;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+.newsletter__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/images/herbs.png') center center / cover no-repeat;
+  filter: blur(2px);
+}
+
+.newsletter__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 25, 21, 0.88) 0%,
+    rgba(26, 25, 21, 0.82) 100%
+  );
+}
+
+.newsletter__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.newsletter__script {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: var(--color-terracotta);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter__title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.newsletter__desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+}
+
+.newsletter__form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter__input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.newsletter__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter__input:focus {
+  border-color: var(--color-terracotta);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter__btn {
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .newsletter__title {
+    font-size: 1.75rem;
+  }
+
+  .newsletter__input {
+    min-width: 100%;
+  }
+}
