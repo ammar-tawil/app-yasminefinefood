@@ -1,55 +1,125 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "redirects": [
     {
-      "source": "/about-us/?",
+      "source": "/about-us",
       "destination": "/about",
       "permanent": true
     },
     {
-      "source": "/contact-us/?",
+      "source": "/about-us/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
       "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/products/?",
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/catalogue",
       "destination": "/products",
       "permanent": true
     },
     {
-      "source": "/catalogue/?",
+      "source": "/catalogue/",
       "destination": "/products",
       "permanent": true
     },
     {
-      "source": "/home/form/sample-request/?",
+      "source": "/home/form/sample-request",
       "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/home/form/new-account-form/?",
+      "source": "/home/form/sample-request/",
       "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/products/pickles/?",
-      "destination": "/products/pickles",
+      "source": "/home/form/new-account-form",
+      "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/products/olive-oil/?",
-      "destination": "/products/olive-oil",
+      "source": "/home/form/new-account-form/",
+      "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/products/dried-fruit/?",
-      "destination": "/products/dried-fruit",
+      "source": "/home/form/:path*",
+      "destination": "/contact",
       "permanent": true
+    },
+    {
+      "source": "/products/pickles",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/pickles/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/olive-oil",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/olive-oil/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/dried-fruit",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/dried-fruit/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/recipes/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/recipes",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/shop/:path*",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/shop",
+      "destination": "/products",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
