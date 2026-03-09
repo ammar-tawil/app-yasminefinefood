@@ -7,28 +7,48 @@
   ],
   "redirects": [
     {
-      "source": "/blog/:path*",
+      "source": "/about-us/?",
       "destination": "/about",
       "permanent": true
     },
     {
-      "source": "/contact-us",
+      "source": "/contact-us/?",
       "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/recipes/:path*",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/catalogue",
+      "source": "/products/?",
       "destination": "/products",
       "permanent": true
     },
     {
-      "source": "/shop/:path*",
+      "source": "/catalogue/?",
       "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/home/form/sample-request/?",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/home/form/new-account-form/?",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/products/pickles/?",
+      "destination": "/products/pickles",
+      "permanent": true
+    },
+    {
+      "source": "/products/olive-oil/?",
+      "destination": "/products/olive-oil",
+      "permanent": true
+    },
+    {
+      "source": "/products/dried-fruit/?",
+      "destination": "/products/dried-fruit",
       "permanent": true
     }
   ],
