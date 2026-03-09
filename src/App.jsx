@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import DisclaimerPage from './pages/DisclaimerPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 // Admin Pages
 import AdminLayout from './layouts/AdminLayout';
@@ -20,27 +21,6 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
-          {/* Top-level Legacy Redirects (highest priority) */}
-          <Route path="/about-us" element={<Navigate to="/about" replace />} />
-          <Route path="/about-us/" element={<Navigate to="/about" replace />} />
-          <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
-          <Route path="/contact-us/" element={<Navigate to="/contact" replace />} />
-          <Route path="/catalogue" element={<Navigate to="/products" replace />} />
-          <Route path="/catalogue/" element={<Navigate to="/products" replace />} />
-          <Route path="/shop" element={<Navigate to="/products" replace />} />
-          <Route path="/shop/" element={<Navigate to="/products" replace />} />
-          <Route path="/shop/*" element={<Navigate to="/products" replace />} />
-          <Route path="/blog" element={<Navigate to="/about" replace />} />
-          <Route path="/blog/" element={<Navigate to="/about" replace />} />
-          <Route path="/blog/*" element={<Navigate to="/about" replace />} />
-          <Route path="/recipes" element={<Navigate to="/about" replace />} />
-          <Route path="/recipes/" element={<Navigate to="/about" replace />} />
-          <Route path="/recipes/*" element={<Navigate to="/about" replace />} />
-          <Route path="/home/form/*" element={<Navigate to="/contact" replace />} />
-          <Route path="/products/pickles" element={<Navigate to="/products" replace />} />
-          <Route path="/products/olive-oil" element={<Navigate to="/products" replace />} />
-          <Route path="/products/dried-fruit" element={<Navigate to="/products" replace />} />
-
           {/* Main App Layout */}
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -52,8 +32,8 @@ function App() {
             <Route path="privacy" element={<PrivacyPage />} />
             <Route path="disclaimer" element={<DisclaimerPage />} />
 
-            {/* Final catch-all for anything missed inside the layout */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Catch-all for 404 Not Found (includes old WP URLs) */}
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
 
           {/* Admin Routes */}
