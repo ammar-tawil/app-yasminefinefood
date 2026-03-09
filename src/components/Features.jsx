@@ -3,7 +3,7 @@ import './Features.css';
 const features = [
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A5D23" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f632d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         <path d="M9 12l2 2 4-4"/>
       </svg>
@@ -13,7 +13,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A5D23" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f632d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="3" width="15" height="13" rx="2"/>
         <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
         <circle cx="5.5" cy="18.5" r="2.5"/>
@@ -25,7 +25,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A5D23" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f632d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
         <path d="M12 6v6l4 2"/>
         <path d="M8 2.5C5 4 3 7 3 10"/>
@@ -37,7 +37,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A5D23" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f632d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
         <circle cx="9" cy="7" r="4"/>
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>

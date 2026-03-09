@@ -2,6 +2,7 @@ import PageHero from '../components/PageHero';
 import About from '../components/About';
 import Trust from '../components/Trust';
 import Promise from '../components/Promise';
+import FAQ from '../components/FAQ';
 import Newsletter from '../components/Newsletter';
 import SEO from '../components/SEO';
 
@@ -21,6 +22,7 @@ const AboutPage = () => {
       <About />
       <Trust />
       <Promise />
+      <FAQ />
       <Newsletter />
     </>
   );

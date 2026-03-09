@@ -10,9 +10,8 @@ const Hero = () => {
         <span className="hero__welcome">Welcome to</span>
         <h1 className="hero__title">Yasmine Fine Food</h1>
         <p className="hero__tagline">
-          Your trusted partner for premium food sourcing, private labeling,
-          and wholesale supply — connecting Australian businesses with the
-          world's finest certified manufacturers.
+          Premium Mediterranean & Middle Eastern food imports for Australian
+          retailers, wholesalers and foodservice.
         </p>
         <div className="hero__buttons">
           <Link to="/services" className="btn btn-primary">

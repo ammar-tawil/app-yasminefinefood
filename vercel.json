@@ -5,6 +5,33 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/blog/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/recipes/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/catalogue",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/shop/:path*",
+      "destination": "/products",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
