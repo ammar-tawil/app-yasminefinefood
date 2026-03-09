@@ -25,6 +25,24 @@ const Newsletter = () => {
       }
       setStatus('error');
     } else {
+      // Send email notification via FormSubmit
+      try {
+        await fetch("https://formsubmit.co/ajax/tawilammar@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Newsletter Subscriber: ${email}`,
+            Email: email,
+            Message: "A new user has subscribed to the Yasmine Fine Food newsletter."
+          })
+        });
+      } catch (emailError) {
+        console.error("Failed to send email copy:", emailError);
+      }
+
       setStatus('success');
       setEmail('');
       setTimeout(() => setStatus('idle'), 3000);

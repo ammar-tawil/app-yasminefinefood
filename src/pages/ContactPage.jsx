@@ -43,6 +43,28 @@ const ContactPage = () => {
       console.error('Error submitting lead:', error);
       setStatus('error');
     } else {
+      // Send email notification via FormSubmit
+      try {
+        await fetch("https://formsubmit.co/ajax/tawilammar@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New B2B Website Lead: ${formData.company || formData.name}`,
+            Name: formData.name,
+            Email: formData.email,
+            Phone: formData.phone || 'Not provided',
+            Company: formData.company || 'Not provided',
+            Service: formData.service || 'Not specified',
+            Message: formData.message
+          })
+        });
+      } catch (emailError) {
+        console.error("Failed to send email copy:", emailError);
+      }
+
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
