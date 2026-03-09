@@ -58,14 +58,89 @@
   margin: 0 auto 2.5rem;
 }
 
-.hero__buttons {
+.hero__subtext {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 550px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+}
+
+.hero__pathways {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero__pathway-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: left;
+  transition: all var(--transition-medium);
+  text-decoration: none;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero__pathway-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.hero__pathway-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+}
+
+.hero__pathway-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.hero__pathway-card p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.hero__pathway-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-terracotta);
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.hero__pathway-card:hover .hero__pathway-link {
+  color: var(--color-white);
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .hero__pathways {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero__title {
     font-size: 3rem;
