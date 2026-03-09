@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './layouts/Layout';
 import HomePage from './pages/HomePage';
@@ -15,6 +15,34 @@ import AdminLayout from './layouts/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminLogin from './pages/admin/AdminLogin';
 
+/**
+ * Handles legacy WordPress URL redirects by normalizing paths
+ */
+function RedirectHandler() {
+  const { pathname } = useLocation();
+  const path = pathname.toLowerCase().replace(/\/$/, "");
+
+  // About redirects
+  if (path === "/about-us" || path.startsWith("/blog") || path.startsWith("/recipes")) {
+    return <Navigate to="/about" replace />;
+  }
+
+  // Products redirects
+  if (path === "/catalogue" || path === "/shop" || path.startsWith("/shop/") || path.startsWith("/products/")) {
+    // Only redirect if it's not a valid new product path we might add later
+    // For now, these old ones definitely go to /products
+    return <Navigate to="/products" replace />;
+  }
+
+  // Contact redirects
+  if (path === "/contact-us" || path.startsWith("/home/form")) {
+    return <Navigate to="/contact" replace />;
+  }
+
+  // Default to home for unknown paths
+  return <Navigate to="/" replace />;
+}
+
 function App() {
   return (
     <HelmetProvider>
@@ -30,25 +58,8 @@ function App() {
             <Route path="privacy" element={<PrivacyPage />} />
             <Route path="disclaimer" element={<DisclaimerPage />} />
 
-            {/* Legacy WordPress URL Redirects */}
-            <Route path="about-us" element={<Navigate to="/about" replace />} />
-            <Route path="contact-us" element={<Navigate to="/contact" replace />} />
-            <Route path="catalogue" element={<Navigate to="/products" replace />} />
-            <Route path="shop" element={<Navigate to="/products" replace />} />
-            <Route path="shop/*" element={<Navigate to="/products" replace />} />
-            <Route path="blog" element={<Navigate to="/about" replace />} />
-            <Route path="blog/*" element={<Navigate to="/about" replace />} />
-            <Route path="recipes" element={<Navigate to="/about" replace />} />
-            <Route path="recipes/*" element={<Navigate to="/about" replace />} />
-            <Route path="home/form/sample-request" element={<Navigate to="/contact" replace />} />
-            <Route path="home/form/new-account-form" element={<Navigate to="/contact" replace />} />
-            <Route path="home/form/*" element={<Navigate to="/contact" replace />} />
-            <Route path="products/pickles" element={<Navigate to="/products" replace />} />
-            <Route path="products/olive-oil" element={<Navigate to="/products" replace />} />
-            <Route path="products/dried-fruit" element={<Navigate to="/products" replace />} />
-
-            {/* Catch-all: send unknown paths to home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Catch-all for legacy redirects that didn't match a route above */}
+            <Route path="*" element={<RedirectHandler />} />
           </Route>
 
           {/* Admin Routes */}
