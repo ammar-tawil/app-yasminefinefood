@@ -10,37 +10,19 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
       - name: Ping Supabase API
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-        run: |
-          if [ -z "$SUPABASE_URL" ]; then
-            echo "::error::SUPABASE_URL secret is missing."
-            exit 1
-          fi
-          if [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "::error::SUPABASE_ANON_KEY secret is missing."
-            exit 1
-          fi
-
-          # Clean up URL (trim spaces and trailing slash)
-          CLEAN_URL=$(echo "$SUPABASE_URL" | xargs | sed 's|/*$||')
-
-          echo "Pinging: $CLEAN_URL/rest/v1/"
-          
-          # Perform the request and capture both body and status code
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "$CLEAN_URL/rest/v1/" \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
-
-          STATUS_CODE=$(echo "$RESPONSE" | tail -n 1)
-          BODY=$(echo "$RESPONSE" | head -n -1)
-
-          if [ "$STATUS_CODE" -ge 200 ] && [ "$STATUS_CODE" -lt 400 ]; then
-            echo "✅ Success! Status: $STATUS_CODE"
-          else
-            echo "::error::❌ Failed! Status: $STATUS_CODE"
-            echo "Response Body: $BODY"
-            exit 1
-          fi
+        run: python scripts/keep_alive.py
