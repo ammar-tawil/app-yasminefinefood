@@ -11,31 +11,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Supabase API
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          if [ -z "${{ secrets.SUPABASE_URL }}" ]; then
-            echo "::error::SUPABASE_URL secret is missing. Please add it in Settings > Secrets and variables > Actions."
+          if [ -z "$SUPABASE_URL" ]; then
+            echo "::error::SUPABASE_URL secret is missing."
             exit 1
           fi
-          if [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
-            echo "::error::SUPABASE_ANON_KEY secret is missing. Please add it in Settings > Secrets and variables > Actions."
+          if [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::SUPABASE_ANON_KEY secret is missing."
             exit 1
           fi
 
-          # Ensure URL is properly formatted
-          URL=$(echo "${{ secrets.SUPABASE_URL }}" | sed 's|^[[:space:]]*||;s|[[:space:]]*$||')
-          URL="${URL%/}"
+          # Clean up URL (trim spaces and trailing slash)
+          CLEAN_URL=$(echo "$SUPABASE_URL" | xargs | sed 's|/*$||')
 
-          echo "Attempting to ping Supabase at $URL/rest/v1/ ..."
+          echo "Pinging: $CLEAN_URL/rest/v1/"
           
-          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$URL/rest/v1/" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          # Perform the request and capture both body and status code
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "$CLEAN_URL/rest/v1/" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+
+          STATUS_CODE=$(echo "$RESPONSE" | tail -n 1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
 
           if [ "$STATUS_CODE" -ge 200 ] && [ "$STATUS_CODE" -lt 400 ]; then
-            echo "✅ Ping successful! Status code: $STATUS_CODE"
-          elif [ "$STATUS_CODE" -eq 401 ] || [ "$STATUS_CODE" -eq 403 ]; then
-            echo "⚠️ Ping received but unauthorized ($STATUS_CODE). This still counts as activity, but check your SUPABASE_ANON_KEY."
+            echo "✅ Success! Status: $STATUS_CODE"
           else
-            echo "::error::❌ Ping failed with status code: $STATUS_CODE"
+            echo "::error::❌ Failed! Status: $STATUS_CODE"
+            echo "Response Body: $BODY"
             exit 1
           fi
