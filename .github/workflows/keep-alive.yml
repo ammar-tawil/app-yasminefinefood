@@ -12,6 +12,30 @@ jobs:
     steps:
       - name: Ping Supabase API
         run: |
-          curl -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/" \
-          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
+          if [ -z "${{ secrets.SUPABASE_URL }}" ]; then
+            echo "::error::SUPABASE_URL secret is missing. Please add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          if [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
+            echo "::error::SUPABASE_ANON_KEY secret is missing. Please add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+          # Ensure URL is properly formatted
+          URL=$(echo "${{ secrets.SUPABASE_URL }}" | sed 's|^[[:space:]]*||;s|[[:space:]]*$||')
+          URL="${URL%/}"
+
+          echo "Attempting to ping Supabase at $URL/rest/v1/ ..."
+          
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$URL/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+
+          if [ "$STATUS_CODE" -ge 200 ] && [ "$STATUS_CODE" -lt 400 ]; then
+            echo "✅ Ping successful! Status code: $STATUS_CODE"
+          elif [ "$STATUS_CODE" -eq 401 ] || [ "$STATUS_CODE" -eq 403 ]; then
+            echo "⚠️ Ping received but unauthorized ($STATUS_CODE). This still counts as activity, but check your SUPABASE_ANON_KEY."
+          else
+            echo "::error::❌ Ping failed with status code: $STATUS_CODE"
+            exit 1
+          fi
