@@ -1,16 +1,19 @@
-# React + Vite
+## 🔧 Maintenance & uptime
+This project includes an automated "Keep-Alive" system to prevent the Supabase database from pausing due to inactivity (common on the free tier).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Centralized Monitoring
+- **Workflow**: `.github/workflows/keep-alive.yml`
+- **Script**: `scripts/keep_alive.py`
+- **Schedule**: Every day at 00:00 UTC.
+- **Scope**: This repository serves as the centralized "pinger" for both **Yasmine Fine Food** and **ammartawil.com**.
 
-Currently, two official plugins are available:
+### Configuration (GitHub Secrets)
+The following secrets must be configured in the GitHub repository for the ping to work:
+- `SUPABASE_URL` & `SUPABASE_ANON_KEY` (for Yasmine Fine Food)
+- `AMMAR_SUPABASE_URL` & `AMMAR_SUPABASE_ANON_KEY` (for Ammar Portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Framework**: React + Vite
+- **Database**: Supabase
+- **Automation**: GitHub Actions (Python)
+- **Deployment**: Vercel
