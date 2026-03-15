@@ -25,4 +25,6 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          AMMAR_SUPABASE_URL: ${{ secrets.AMMAR_SUPABASE_URL }}
+          AMMAR_SUPABASE_ANON_KEY: ${{ secrets.AMMAR_SUPABASE_ANON_KEY }}
         run: python scripts/keep_alive.py
