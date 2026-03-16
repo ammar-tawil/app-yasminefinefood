@@ -44,7 +44,7 @@ const Newsletter = () => {
           body: JSON.stringify({
             _subject: `New Newsletter Subscriber: ${email}`,
             Email: email,
-            Message: "A new user has subscribed to the Yasmine Fine Food newsletter."
+            Message: "A new user has subscribed to the Yasmine® Fine Food newsletter."
           })
         });
       } catch (emailError) {
