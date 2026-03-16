@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../../lib/supabase';
 import SEO from '../../components/SEO';
 import { Users, Mail, RefreshCw, Briefcase } from 'lucide-react';
@@ -8,30 +8,34 @@ const AdminDashboard = () => {
   const [subscribers, setSubscribers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
-    setLoading(true);
+  const fetchData = useCallback(async (isInitial = false) => {
+    if (!isInitial) setLoading(true);
 
-    // Fetch Leads
-    const { data: leadsData } = await supabase
-      .from('leads')
-      .select('*')
-      .order('created_at', { ascending: false });
+    try {
+      // Fetch Leads
+      const { data: leadsData } = await supabase
+        .from('leads')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-    // Fetch Subscribers
-    const { data: subsData } = await supabase
-      .from('subscribers')
-      .select('*')
-      .order('created_at', { ascending: false });
+      // Fetch Subscribers
+      const { data: subsData } = await supabase
+        .from('subscribers')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-    if (leadsData) setLeads(leadsData);
-    if (subsData) setSubscribers(subsData);
-
-    setLoading(false);
-  };
+      if (leadsData) setLeads(leadsData);
+      if (subsData) setSubscribers(subsData);
+    } catch (err) {
+      console.error('Error fetching dashboard data:', err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(true);
+  }, [fetchData]);
 
   const updateLeadStatus = async (id, newStatus) => {
     const { error } = await supabase
