@@ -12,10 +12,18 @@ const Newsletter = () => {
 
     setStatus('submitting');
 
-    // Attempt insert into Supabase
-    const { error } = await supabase
-      .from('subscribers')
-      .insert([{ email }]);
+    // Attempt insert into Supabase if configured
+    let error = null;
+    if (supabase) {
+      try {
+        const result = await supabase
+          .from('subscribers')
+          .insert([{ email }]);
+        error = result.error;
+      } catch (e) {
+        error = e;
+      }
+    }
 
     if (error) {
       if (error.code === '23505') {
