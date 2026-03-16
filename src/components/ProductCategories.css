@@ -14,15 +14,16 @@
 .categories__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 280px;
-  gap: 1.25rem;
+  grid-auto-rows: 320px;
+  gap: 1.5rem;
 }
 
 .categories__card {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 28px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .categories__card--large {

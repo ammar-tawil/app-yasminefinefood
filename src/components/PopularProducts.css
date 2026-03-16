@@ -19,16 +19,17 @@
 
 .popular__card {
   background: var(--color-white);
-  border-radius: var(--radius-lg);
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-medium);
-  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .popular__card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(79, 99, 45, 0.15);
+  border-color: var(--color-green-light);
 }
 
 .popular__card-img-wrap {

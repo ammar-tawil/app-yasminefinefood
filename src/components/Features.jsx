@@ -55,7 +55,7 @@ const Features = () => {
       <div className="container">
         <div className="features__grid">
           {features.map((f, i) => (
-            <div key={i} className="features__card" style={{ animationDelay: `${i * 0.1}s` }}>
+            <div key={i} className="features__card reveal" style={{ animationDelay: `${i * 0.15}s` }}>
               <div className="features__icon">{f.icon}</div>
               <h3 className="features__title">{f.title}</h3>
               <p className="features__desc">{f.desc}</p>

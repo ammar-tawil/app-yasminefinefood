@@ -54,11 +54,12 @@ const Newsletter = () => {
       <div className="newsletter__bg"></div>
       <div className="newsletter__overlay"></div>
       <div className="container newsletter__content">
-        <span className="newsletter__script">Stay Updated</span>
-        <h2 className="newsletter__title">Subscribe to Our Newsletter</h2>
-        <p className="newsletter__desc">
+        <span className="newsletter__script reveal">Stay Updated</span>
+        <h2 className="newsletter__title reveal" style={{ animationDelay: '0.2s' }}>Subscribe to Our Newsletter</h2>
+        <p className="newsletter__desc reveal" style={{ animationDelay: '0.4s' }}>
           Get the latest updates on new products, special offers, and industry news.
         </p>
+        <div className="reveal" style={{ animationDelay: '0.6s' }}>
         <form className="newsletter__form" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -76,6 +77,7 @@ const Newsletter = () => {
             )}
           </button>
         </form>
+        </div>
         {status === 'success' && (
           <p style={{ color: 'var(--color-white)', marginTop: '1rem', fontWeight: '500' }}>
             Thanks for subscribing!

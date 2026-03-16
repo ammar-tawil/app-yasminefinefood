@@ -62,13 +62,13 @@ const PopularProducts = () => {
     <section className="popular">
       <div className="container">
         <div className="popular__header">
-          <span className="section-script">Featured</span>
-          <h2 className="section-title">Popular Products</h2>
+          <span className="section-script reveal">Featured</span>
+          <h2 className="section-title reveal gradient-text" style={{ animationDelay: '0.2s' }}>Popular Products</h2>
         </div>
 
         <div className="popular__grid">
           {products.map((p, i) => (
-            <div key={i} className="popular__card">
+            <div key={i} className="popular__card reveal" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
               <div className="popular__card-img-wrap">
                 <img src={p.image} alt={p.name} className="popular__card-img" />
                 <span className="popular__card-badge">{p.category}</span>

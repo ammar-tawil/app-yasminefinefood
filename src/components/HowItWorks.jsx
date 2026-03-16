@@ -28,9 +28,9 @@ const HowItWorks = () => {
     <section className="how-it-works">
       <div className="container">
         <div className="how-it-works__header">
-          <span className="section-script">Our Process</span>
-          <h2 className="section-title">How It Works</h2>
-          <p className="section-subtitle">
+          <span className="section-script reveal">Our Process</span>
+          <h2 className="section-title reveal gradient-text" style={{ animationDelay: '0.2s' }}>How It Works</h2>
+          <p className="section-subtitle reveal" style={{ animationDelay: '0.4s' }}>
             A transparent, step-by-step approach to sourcing and supplying
             premium food products for your business.
           </p>
@@ -38,7 +38,7 @@ const HowItWorks = () => {
 
         <div className="how-it-works__timeline">
           {steps.map((step, i) => (
-            <div key={i} className="how-it-works__step">
+            <div key={i} className="how-it-works__step reveal" style={{ animationDelay: `${0.6 + i * 0.15}s` }}>
               <div className="how-it-works__number-wrap">
                 <span className="how-it-works__number">{step.number}</span>
                 {i < steps.length - 1 && <div className="how-it-works__line"></div>}

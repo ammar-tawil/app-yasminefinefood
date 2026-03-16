@@ -53,7 +53,7 @@ const badges = [
       </svg>
     ),
     title: 'Registered Australian Business',
-    desc: 'ABN: 12 345 678 900 — Australia Smart Trading Pty Ltd',
+    desc: 'ABN: 82 162 348 423 — Australia Smart Trading Pty Ltd',
   },
 ];
 

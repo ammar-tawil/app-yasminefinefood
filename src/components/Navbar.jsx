@@ -13,15 +13,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
+  // No longer using useEffect for setMobileOpen(false) to avoid cascading renders.
+  // We can handle closing specifically when links are clicked.
+  const handleLinkClick = () => setMobileOpen(false);
 
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}${location.pathname !== '/' ? ' navbar--scrolled' : ''}`}>
+    <header className={`navbar glass ${scrolled ? ' navbar--scrolled' : ''}${location.pathname !== '/' ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <Link to="/" className="navbar__logo">
           <div className="navbar__logo-icon">
@@ -38,11 +37,11 @@ const Navbar = () => {
         </Link>
 
         <nav className={`navbar__nav${mobileOpen ? ' navbar__nav--open' : ''}`}>
-          <Link to="/" className={`navbar__link${isActive('/') ? ' navbar__link--active' : ''}`}>Home</Link>
-          <Link to="/services" className={`navbar__link${isActive('/services') ? ' navbar__link--active' : ''}`}>Services</Link>
-          <Link to="/products" className={`navbar__link${isActive('/products') ? ' navbar__link--active' : ''}`}>Products</Link>
-          <Link to="/about" className={`navbar__link${isActive('/about') ? ' navbar__link--active' : ''}`}>About Us</Link>
-          <Link to="/contact" className={`navbar__link${isActive('/contact') ? ' navbar__link--active' : ''}`}>Contact</Link>
+          <Link to="/" onClick={handleLinkClick} className={`navbar__link${isActive('/') ? ' navbar__link--active' : ''}`}>Home</Link>
+          <Link to="/services" onClick={handleLinkClick} className={`navbar__link${isActive('/services') ? ' navbar__link--active' : ''}`}>Services</Link>
+          <Link to="/products" onClick={handleLinkClick} className={`navbar__link${isActive('/products') ? ' navbar__link--active' : ''}`}>Products</Link>
+          <Link to="/about" onClick={handleLinkClick} className={`navbar__link${isActive('/about') ? ' navbar__link--active' : ''}`}>About Us</Link>
+          <Link to="/contact" onClick={handleLinkClick} className={`navbar__link${isActive('/contact') ? ' navbar__link--active' : ''}`}>Contact</Link>
         </nav>
 
         <Link to="/contact" className="navbar__cta btn btn-primary">

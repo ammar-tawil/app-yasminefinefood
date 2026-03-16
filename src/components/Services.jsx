@@ -70,9 +70,9 @@ const Services = () => {
     <section id="services" className="services">
       <div className="container">
         <div className="services__header">
-          <span className="section-script">What We Do</span>
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
+          <span className="section-script reveal">What We Do</span>
+          <h2 className="section-title reveal gradient-text" style={{ animationDelay: '0.2s' }}>Our Services</h2>
+          <p className="section-subtitle reveal" style={{ animationDelay: '0.4s' }}>
             Comprehensive B2B food sourcing and brand development solutions
             for Australian businesses.
           </p>
@@ -80,7 +80,7 @@ const Services = () => {
 
         <div className="services__grid">
           {services.map((s, i) => (
-            <div key={i} className="services__card" style={{ animationDelay: `${i * 0.08}s` }}>
+            <div key={i} className="services__card reveal" style={{ animationDelay: `${0.6 + i * 0.1}s` }}>
               <div className="services__icon">{s.icon}</div>
               <h3 className="services__title">{s.title}</h3>
               <p className="services__desc">{s.desc}</p>

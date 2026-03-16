@@ -3,7 +3,7 @@
    ======================================== */
 .contact-cta {
   position: relative;
-  padding: 5rem 2rem;
+  padding: 8rem 2rem;
   background: var(--color-olive-dark);
   overflow: hidden;
 }
@@ -13,8 +13,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(61, 74, 42, 0.95) 0%,
-    rgba(46, 56, 32, 0.9) 100%
+    rgba(61, 74, 42, 0.98) 0%,
+    rgba(26, 25, 21, 0.95) 100%
   );
 }
 
@@ -23,22 +23,25 @@
   z-index: 2;
   text-align: center;
   color: var(--color-white);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-cta__script {
   font-family: var(--font-script);
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--color-terracotta);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact-cta__title {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 800;
   color: var(--color-white);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
 .contact-cta__desc {

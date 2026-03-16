@@ -17,16 +17,16 @@ const ProductCategories = () => {
     <section id="products" className="categories">
       <div className="container">
         <div className="categories__header">
-          <span className="section-script">Our Selection</span>
-          <h2 className="section-title">Product Categories</h2>
-          <p className="section-subtitle">
+          <span className="section-script reveal">Our Selection</span>
+          <h2 className="section-title reveal gradient-text" style={{ animationDelay: '0.2s' }}>Product Categories</h2>
+          <p className="section-subtitle reveal" style={{ animationDelay: '0.4s' }}>
             Discover our wide range of premium quality products sourced from the finest producers.
           </p>
         </div>
 
         <div className="categories__grid">
           {categories.map((cat, i) => (
-            <div key={i} className={`categories__card categories__card--${i < 2 ? 'large' : 'small'}`}>
+            <div key={i} className={`categories__card categories__card--${i < 2 ? 'large' : 'small'} reveal`} style={{ animationDelay: `${0.6 + i * 0.1}s` }}>
               <div className="categories__card-img" style={{ backgroundImage: `url(${cat.image})` }}></div>
               <div className="categories__card-overlay"></div>
               <div className="categories__card-content">

@@ -3,7 +3,7 @@
    ======================================== */
 .newsletter {
   position: relative;
-  padding: 5rem 2rem;
+  padding: 8rem 2rem;
   overflow: hidden;
 }
 
@@ -11,7 +11,8 @@
   position: absolute;
   inset: 0;
   background: url('/images/herbs.png') center center / cover no-repeat;
-  filter: blur(2px);
+  filter: blur(4px);
+  transform: scale(1.05);
 }
 
 .newsletter__overlay {
@@ -19,8 +20,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(26, 25, 21, 0.88) 0%,
-    rgba(26, 25, 21, 0.82) 100%
+    rgba(26, 25, 21, 0.95) 0%,
+    rgba(79, 99, 45, 0.85) 100%
   );
 }
 
@@ -29,22 +30,25 @@
   z-index: 2;
   text-align: center;
   color: var(--color-white);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .newsletter__script {
   font-family: var(--font-script);
-  font-size: 1.35rem;
+  font-size: 2rem;
   color: var(--color-terracotta);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .newsletter__title {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: var(--color-white);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 .newsletter__desc {
