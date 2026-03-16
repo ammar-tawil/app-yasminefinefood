@@ -13,7 +13,7 @@ const About = () => {
             <span className="section-script reveal">About Us</span>
             <h2 className="section-title reveal gradient-text" style={{ textAlign: 'left', animationDelay: '0.2s' }}>Your Sourcing<br/>Partner in Australia</h2>
             <p className="about__text reveal" style={{ animationDelay: '0.4s' }}>
-              Yasmine Fine Food is a Sydney-based B2B food sourcing and distribution company
+              Yasmine® Fine Food is a Sydney-based B2B food sourcing and distribution company
               specializing in connecting Australian businesses — importers, retailers, wholesalers,
               and brand owners — with certified international food manufacturers.
             </p>

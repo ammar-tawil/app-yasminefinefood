@@ -82,7 +82,7 @@ const Trust = () => {
 
         <div className="trust__note">
           <p>
-            <strong>Disclaimer:</strong> Yasmine Fine Food assists businesses with sourcing and compliance guidance.
+            <strong>Disclaimer:</strong> Yasmine® Fine Food assists businesses with sourcing and compliance guidance.
             All products and manufacturing processes are subject to independent verification. We recommend consulting
             with qualified food safety professionals for specific regulatory requirements. Specific certifications
             may vary by manufacturer and product.

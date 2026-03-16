@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, url, type = 'website', schema }) => {
-  const siteName = 'Yasmine Fine Food';
-  const fullTitle = title ? `${title} | ${siteName}` : siteName;
+  const siteName = 'Yasmine® Fine Food';
+  const fullTitle = title ? `${title} | ${siteName}` : 'Yasmine® Fine Food — Premium Mediterranean & Middle Eastern Imports';
   const defaultDesc = 'Your trusted B2B partner for premium food sourcing, private labeling, and wholesale supply in Australia.';
   const currentUrl = `https://yasminefinefood.com${url || '/'}`;
 

@@ -75,7 +75,7 @@ const ContactPage = () => {
     <>
       <SEO
         title="Contact Us | Request a B2B Sourcing Quote"
-        description="Get in touch with Yasmine Fine Food for B2B product sourcing, private labeling quotes, and manufacturer verification consultations in Australia."
+        description="Get in touch with Yasmine® Fine Food for B2B product sourcing, private labeling quotes, and manufacturer verification consultations in Australia."
         url="/contact"
       />
       <PageHero

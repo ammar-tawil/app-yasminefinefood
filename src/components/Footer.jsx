@@ -17,7 +17,7 @@ const Footer = () => {
                 </svg>
               </div>
               <div className="footer__logo-text">
-                <span className="footer__logo-name">Yasmine</span>
+                <span className="footer__logo-name">Yasmine®</span>
                 <span className="footer__logo-sub">FINE FOOD</span>
               </div>
             </Link>
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} Yasmine Fine Food. All rights reserved. | ABN: 82 162 348 423</p>
+          <p>&copy; {new Date().getFullYear()} Yasmine® Fine Food. All rights reserved. | ABN: 82 162 348 423</p>
           <div className="footer__legal">
             <Link to="/terms">Terms of Service</Link>
             <span>·</span>

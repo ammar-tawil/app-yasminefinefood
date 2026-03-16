@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Yasmine Fine Food</title>
+        <title>Page Not Found | Yasmine® Fine Food</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       <div className="not-found">

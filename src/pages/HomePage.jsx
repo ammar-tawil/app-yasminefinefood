@@ -20,7 +20,7 @@ const HomePage = () => {
         schema={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          name: 'Yasmine Fine Food',
+          name: 'Yasmine® Fine Food',
           description: 'Your trusted B2B partner for premium food sourcing, private labeling, and wholesale supply in Australia.',
           url: 'https://yasminefinefood.com',
           telephone: '1300-395-320',

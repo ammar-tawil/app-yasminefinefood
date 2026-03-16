@@ -7,7 +7,7 @@ const PrivacyPage = () => {
     <>
       <SEO
         title="Privacy Policy"
-        description="Read the Privacy Policy of Yasmine Fine Food to understand how we securely collect, use, and protect your B2B commercial data."
+        description="Read the Privacy Policy of Yasmine® Fine Food to understand how we securely collect, use, and protect your B2B commercial data."
         url="/privacy"
       />
       <PageHero
@@ -23,7 +23,7 @@ const PrivacyPage = () => {
 
             <h2>1. Introduction</h2>
             <p>
-              Yasmine Fine Food ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (yasminefinefood.com) and utilize our B2B sourcing, consulting, and wholesale services. We adhere to the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).
+              Yasmine® Fine Food ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (yasminefinefood.com) and utilize our B2B sourcing, consulting, and wholesale services. We adhere to the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).
             </p>
 
             <h2>2. Information We Collect</h2>
@@ -68,7 +68,7 @@ const PrivacyPage = () => {
             <p>
               If you have questions or comments about this Privacy Policy, please contact us at:
               <br/><br/>
-              <strong>Yasmine Fine Food</strong><br/>
+              <strong>Yasmine® Fine Food</strong><br/>
               Sydney, NSW Australia<br/>
               Email: info@yasminefinefood.com<br/>
               Phone: 1300 395 320
