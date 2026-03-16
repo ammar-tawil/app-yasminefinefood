@@ -226,6 +226,15 @@ h6 {
   --shadow-premium: 0 20px 40px rgba(79, 99, 45, 0.1);
 }
 
+.trademark {
+  font-size: 0.45em;
+  vertical-align: super;
+  margin-left: 0.1em;
+  line-height: 0;
+  position: relative;
+  top: -0.1em;
+}
+
 .glass {
   background: var(--glass-bg);
   -webkit-backdrop-filter: blur(12px);

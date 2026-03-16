@@ -23,7 +23,7 @@ const PrivacyPage = () => {
 
             <h2>1. Introduction</h2>
             <p>
-              Yasmine® Fine Food ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (yasminefinefood.com) and utilize our B2B sourcing, consulting, and wholesale services. We adhere to the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).
+              Yasmine<span className="trademark">®</span> Fine Food ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website (yasminefinefood.com) and utilize our B2B sourcing, consulting, and wholesale services. We adhere to the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth).
             </p>
 
             <h2>2. Information We Collect</h2>

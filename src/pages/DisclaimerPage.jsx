@@ -23,15 +23,15 @@ const DisclaimerPage = () => {
 
             <h2>1. General Information</h2>
             <p>
-              The information provided by Yasmine® Fine Food ("we," "us," or "our") on yasminefinefood.com (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+              The information provided by Yasmine<span className="trademark">®</span> Fine Food ("we," "us," or "our") on yasminefinefood.com (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
             </p>
 
             <h2>2. B2B Sourcing and Manufacturing Disclaimer</h2>
             <p>
-              Yasmine® Fine Food operates as a B2B sourcing partner, consultant, and facilitator between Australian businesses and international food manufacturers. <strong>We do not directly manufacture the physical products.</strong>
+              Yasmine<span className="trademark">®</span> Fine Food operates as a B2B sourcing partner, consultant, and facilitator between Australian businesses and international food manufacturers. <strong>We do not directly manufacture the physical products.</strong>
             </p>
             <p>
-              While we conduct rigorous verification, auditing, and vetting of our manufacturing partners to ensure they hold recognized credentials (such as ISO, HACCP, or specific organic certifications), the ultimate responsibility for maintaining these certifications lies with the manufacturer. Yasmine® Fine Food cannot be held liable for sudden changes in a manufacturer's certification status or unforeseen production errors at the source facility.
+              While we conduct rigorous verification, auditing, and vetting of our manufacturing partners to ensure they hold recognized credentials (such as ISO, HACCP, or specific organic certifications), the ultimate responsibility for maintaining these certifications lies with the manufacturer. Yasmine<span className="trademark">®</span> Fine Food cannot be held liable for sudden changes in a manufacturer's certification status or unforeseen production errors at the source facility.
             </p>
 
             <h2>3. Regulatory Compliance & FSANZ Disclaimer</h2>

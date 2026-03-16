@@ -31,7 +31,7 @@ const Navbar = () => {
             </svg>
           </div>
           <div className="navbar__logo-text">
-            <span className="navbar__logo-name">Yasmine®</span>
+            <span className="navbar__logo-name">Yasmine<span className="trademark">®</span></span>
             <span className="navbar__logo-sub">FINE FOOD</span>
           </div>
         </Link>

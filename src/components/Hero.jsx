@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero__overlay"></div>
       <div className="hero__content container">
         <span className="hero__welcome reveal">Welcome to</span>
-        <h1 className="hero__title reveal" style={{ animationDelay: '0.2s' }}>Yasmine® Fine Food</h1>
+        <h1 className="hero__title reveal" style={{ animationDelay: '0.2s' }}>Yasmine<span className="trademark">®</span> Fine Food</h1>
         <p className="hero__tagline reveal" style={{ animationDelay: '0.4s' }}>
           Premium Mediterranean & Middle Eastern food imports for Australian
           wholesalers, retailers and foodservice buyers.
