@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} Yasmine® Fine Food. All rights reserved. | ABN: 82 162 348 423</p>
+          <p className="footer__copyright">&copy; {new Date().getFullYear()} Yasmine® Fine Food. All rights reserved. | ABN: 82 162 348 423</p>
           <div className="footer__legal">
             <Link to="/terms">Terms of Service</Link>
             <span>·</span>
