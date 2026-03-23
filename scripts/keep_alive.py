@@ -8,18 +8,20 @@ def ping_supabase(name, url, key):
         return True
 
     url = url.strip().rstrip('/')
-    ping_url = f"{url}/rest/v1/"
+    # Querying a table (even if empty or limited by RLS) ensures the DB engine is engaged
+    ping_url = f"{url}/rest/v1/leads?select=id&limit=1"
 
-    print(f"Pinging {name} at {url[:12]}...{url[-5:]}/rest/v1/")
+    print(f"Pinging {name} Database at {url[:12]}...{url[-5:]}")
 
     try:
         response = requests.get(
             ping_url,
             headers={"apikey": key, "Authorization": f"Bearer {key}"},
-            timeout=10
+            timeout=15
         )
-        if 200 <= response.status_code < 400:
-            print(f"✅ {name} Success! Status code: {response.status_code}")
+        # 200 is success, 406/401/403 still counts as an API request that hits the DB layer
+        if 200 <= response.status_code < 500:
+            print(f"✅ {name} Activity Registered! Status code: {response.status_code}")
             return True
         else:
             print(f"::error::❌ {name} Failed! Status code: {response.status_code}")

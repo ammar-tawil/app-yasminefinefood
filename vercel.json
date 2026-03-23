@@ -8,7 +8,16 @@
     }
   ],
   "routes": [
+    { "src": "/about-us/?", "status": 301, "headers": { "Location": "/about" } },
+    { "src": "/contact-us/?", "status": 301, "headers": { "Location": "/contact" } },
+    { "src": "/catalogue/?", "status": 301, "headers": { "Location": "/products" } },
+    { "src": "/products/.+", "status": 301, "headers": { "Location": "/products" } },
+    { "src": "/blog/.*", "status": 410 },
+    { "src": "/recipes/.*", "status": 410 },
+    { "src": "/home/form/.*", "status": 301, "headers": { "Location": "/contact" } },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(services|products|about|contact|terms|privacy|disclaimer|admin).*", "dest": "/index.html" },
+    { "src": "/$", "dest": "/index.html" },
+    { "src": "/(.*)", "status": 404, "dest": "/index.html" }
   ]
 }
