@@ -10,7 +10,7 @@
 .newsletter__bg {
   position: absolute;
   inset: 0;
-  background: url('/images/herbs.png') center center / cover no-repeat;
+  background: url('/images/herbs.webp') center center / cover no-repeat;
   filter: blur(4px);
   transform: scale(1.05);
 }

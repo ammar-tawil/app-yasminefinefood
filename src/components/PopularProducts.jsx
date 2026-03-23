@@ -8,7 +8,7 @@ const products = [
     packSize: '500g, 1kg, 5kg, 18kg Pails',
     idealFor: 'Foodservice, Manufacturers, Retailers',
     moq: '1 Pallet / Mixed Orders',
-    image: '/images/tahini.png',
+    image: '/images/tahini.webp',
   },
   {
     name: 'Mixed Pickles',
@@ -17,7 +17,7 @@ const products = [
     packSize: '1kg, 2.5kg, 10kg Tins',
     idealFor: 'Restaurants, Delis, Retailers',
     moq: '50 Cartons',
-    image: '/images/pickles.png',
+    image: '/images/pickles.webp',
   },
   {
     name: "Za'atar Blend",
@@ -26,7 +26,7 @@ const products = [
     packSize: '250g, 500g, 10kg Bulk Bags',
     idealFor: 'Bakeries, Foodservice, Brands',
     moq: '100kg',
-    image: '/images/herbs.png',
+    image: '/images/herbs.webp',
   },
   {
     name: 'Premium Dried Apricots',
@@ -35,7 +35,7 @@ const products = [
     packSize: '250g, 5kg, 12.5kg Cartons',
     idealFor: 'Snack Packers, Wholefood Stores',
     moq: '1 Pallet',
-    image: '/images/dried-fruit.png',
+    image: '/images/dried-fruit.webp',
   },
   {
     name: 'Roasted Almonds',
@@ -44,7 +44,7 @@ const products = [
     packSize: '200g, 1kg, 11.34kg Cartons',
     idealFor: 'Retailers, Nut Roasters',
     moq: '1 Pallet',
-    image: '/images/nuts.png',
+    image: '/images/nuts.webp',
   },
   {
     name: 'Pure Mountain Honey',
@@ -53,7 +53,7 @@ const products = [
     packSize: '500g, 1kg, 3kg, 30kg Pails',
     idealFor: 'Retailers, Health Stores',
     moq: '1 Pallet',
-    image: '/images/honey.png',
+    image: '/images/honey.webp',
   },
 ];
 

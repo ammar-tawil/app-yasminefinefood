@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <header className={`navbar glass ${scrolled ? ' navbar--scrolled' : ''}${location.pathname !== '/' ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <Link to="/" className="navbar__logo">
+        <Link to="/" className="navbar__logo" aria-label="Yasmine Fine Food Home">
           <div className="navbar__logo-icon">
             <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
               <circle cx="20" cy="20" r="20" fill="#4f632d"/>

@@ -6,7 +6,7 @@ const About = () => {
       <div className="container">
         <div className="about__grid">
           <div className="about__image-wrap">
-            <img src="/images/olive-oil.png" alt="Premium Mediterranean Products" className="about__image" />
+            <img src="/images/olive-oil.webp" alt="Premium Mediterranean Products" className="about__image" />
             <div className="about__image-accent"></div>
           </div>
           <div className="about__content">

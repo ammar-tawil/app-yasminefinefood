@@ -4,7 +4,7 @@
 .page-hero {
   position: relative;
   padding: 12rem 2rem 6rem;
-  background: url('/images/hero.png') center center / cover no-repeat;
+  background: url('/images/hero.webp') center center / cover no-repeat;
   text-align: center;
   overflow: hidden;
   display: flex;

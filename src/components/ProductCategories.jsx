@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import './ProductCategories.css';
 
 const categories = [
-  { name: 'Tahini', desc: 'Premium quality tahini paste made from the finest sesame seeds', image: '/images/tahini.png' },
-  { name: 'Pickles', desc: 'Traditional Mediterranean pickled vegetables', image: '/images/pickles.png' },
-  { name: 'Herbs & Spices', desc: 'Authentic blends from around the world', image: '/images/herbs.png' },
-  { name: 'Dried Fruit', desc: 'Sun-dried fruits preserving natural sweetness', image: '/images/dried-fruit.png' },
-  { name: 'Nuts', desc: 'Premium roasted and raw nuts, freshly packed', image: '/images/nuts.png' },
-  { name: 'Honey', desc: 'Pure natural honey from mountain apiaries', image: '/images/honey.png' },
-  { name: 'Olive Oil', desc: 'Cold-pressed extra virgin from Mediterranean groves', image: '/images/olive-oil.png' },
-  { name: 'Dried Beans', desc: 'Quality legumes and pulses', image: '/images/beans.png' },
+  { name: 'Tahini', desc: 'Premium quality tahini paste made from the finest sesame seeds', image: '/images/tahini.webp' },
+  { name: 'Pickles', desc: 'Traditional Mediterranean pickled vegetables', image: '/images/pickles.webp' },
+  { name: 'Herbs & Spices', desc: 'Authentic blends from around the world', image: '/images/herbs.webp' },
+  { name: 'Dried Fruit', desc: 'Sun-dried fruits preserving natural sweetness', image: '/images/dried-fruit.webp' },
+  { name: 'Nuts', desc: 'Premium roasted and raw nuts, freshly packed', image: '/images/nuts.webp' },
+  { name: 'Honey', desc: 'Pure natural honey from mountain apiaries', image: '/images/honey.webp' },
+  { name: 'Olive Oil', desc: 'Cold-pressed extra virgin from Mediterranean groves', image: '/images/olive-oil.webp' },
+  { name: 'Dried Beans', desc: 'Quality legumes and pulses', image: '/images/beans.webp' },
 ];
 
 const ProductCategories = () => {

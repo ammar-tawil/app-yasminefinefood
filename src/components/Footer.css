@@ -48,7 +48,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.25em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
 }
 
@@ -75,7 +75,7 @@
 .footer__links a {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.85);
   font-family: var(--font-sans);
   font-size: 0.9rem;
   cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 .footer__contact a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.95);
   transition: color var(--transition-fast);
 }
 
@@ -122,7 +122,7 @@
   padding: 2rem 0;
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,7 +140,7 @@
 }
 
 .footer__legal a {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition-fast);
   text-decoration: none;
 }

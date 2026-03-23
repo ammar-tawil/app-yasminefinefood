@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer__grid">
           {/* Brand */}
           <div className="footer__brand">
-            <Link to="/" className="footer__logo">
+            <Link to="/" className="footer__logo" aria-label="Yasmine Fine Food Home">
               <div className="footer__logo-icon">
                 <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
                   <circle cx="20" cy="20" r="20" fill="#4f632d"/>
@@ -29,7 +29,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="footer__col">
-            <h4 className="footer__col-title">Quick Links</h4>
+            <h3 className="footer__col-title">Quick Links</h3>
             <ul className="footer__links">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="footer__col">
-            <h4 className="footer__col-title">Our Services</h4>
+            <h3 className="footer__col-title">Our Services</h3>
             <ul className="footer__links">
               <li><Link to="/services">B2B Sourcing</Link></li>
               <li><Link to="/services">Private Labeling</Link></li>
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="footer__col">
-            <h4 className="footer__col-title">Contact Us</h4>
+            <h3 className="footer__col-title">Contact Us</h3>
             <ul className="footer__contact">
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>

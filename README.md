@@ -1,3 +1,7 @@
+# Yasmine Fine Food - Premium Catering & Food Service
+
+![Quality Check](https://github.com/ammar-tawil/app-yasminefinefood.com/actions/workflows/quality-check.yml/badge.svg)
+
 ## 🔧 Maintenance & uptime
 This project includes an automated "Keep-Alive" system to prevent the Supabase database from pausing due to inactivity (common on the free tier).
 
