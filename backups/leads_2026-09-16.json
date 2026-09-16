@@ -1,0 +1,46 @@
+[
+  {
+    "id": "37f0005c-3e43-4d21-9705-403971412365",
+    "created_at": "2026-03-09T03:46:59.549964+00:00",
+    "name": "Ammar Tawil",
+    "email": "tawilammar@gmail.com",
+    "phone": "0405600800",
+    "company": "Australia Smart Trading P/L",
+    "service": "sourcing",
+    "message": "Test\n",
+    "status": "new"
+  },
+  {
+    "id": "e229fe3e-c4e4-43b4-b2f7-a7820acfd989",
+    "created_at": "2026-03-09T03:52:37.177827+00:00",
+    "name": "Ammar Tawil",
+    "email": "tawilammar@gmail.com",
+    "phone": "0405600800",
+    "company": "Australia Smart Trading P/L",
+    "service": "sourcing",
+    "message": "TEST",
+    "status": "new"
+  },
+  {
+    "id": "7cd96b61-c43e-4326-b38e-c30c315ca20b",
+    "created_at": "2026-03-09T04:02:21.608532+00:00",
+    "name": "Ammar Tawil",
+    "email": "tawilammar@gmail.com",
+    "phone": "0405600800",
+    "company": "Australia Smart Trading P/L",
+    "service": "sourcing",
+    "message": "TEST !",
+    "status": "new"
+  },
+  {
+    "id": "5204e62c-0965-4d81-9b63-fb05e2aef093",
+    "created_at": "2026-03-13T07:19:02.617163+00:00",
+    "name": "javier",
+    "email": "export@exportthebest.es",
+    "phone": "0034652781254",
+    "company": "www.exportthebest.es",
+    "service": "private-label",
+    "message": "Good morning\n\nI hope you are going well. Just to let you know that we will be at the Alimentaria (Barcelona) and Gourmet (Madrid) trade fairs in the coming weeks. If you attend, it will be a fantastic opportunity to meet us in person and introduce you to our suppliers, as many of them will be attending the fairs.\n\nThank you for your attention.\nKind regards,\n\nJavier\n\nJavier Pérez  I  Export Department\n\nGeneral Díaz Porlier, 59\n\n28006 Madrid, Spain\n\nwww.exportthebest.es\n",
+    "status": "new"
+  }
+]
